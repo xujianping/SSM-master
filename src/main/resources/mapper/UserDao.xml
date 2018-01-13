@@ -11,13 +11,13 @@
 			
 	</select>
 	
-	<!-- 增加用户名和密码进行注册  -->
-<!-- 	<insert id="registerByUsernameAndPassword"> -->
+	 <!--增加用户名和密码进行注册  -->
+ 	<insert id="registerByUsernameAndPassword">
 	    
-<!-- 	    insert into user (username,password) -->
-<!-- 	    values -->
-<!-- 	    (#{username},#{password}) -->
+ 	    insert into user (username,password)
+ 	    values
+ 	    (#{username},#{password})
 	
-<!-- 	</insert> -->
+ 	</insert>
 	
 </mapper>	

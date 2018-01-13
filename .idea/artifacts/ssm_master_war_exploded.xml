@@ -32,6 +32,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.3.5" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:1.11.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

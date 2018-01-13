@@ -16,20 +16,20 @@
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/basic.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="${path}/css/basic.css">
+    <link rel="stylesheet" href="${path}/css/font-awesome.css">
 </head>
 <body>
 <div id="wrapper">
-
-    <%@include file="WEB-INF/views/common/header.jsp" %>
-
+    <%@include file="../common/header.jsp" %>
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">大标题</h1>
-                    <h1 class="page-subhead-line">小标题 </h1>
+                    <h1 class="page-head-line">basePath =<%=basePath%>
+                    </h1>
+                    <h1 class="page-subhead-line">path = <%=path%>
+                    </h1>
 
                 </div>
             </div>
@@ -37,8 +37,7 @@
         </div>
     </div>
     <!-- /. WRAPPER  -->
-    <%@include file="WEB-INF/views/common/footer.jsp" %>
-
+    <%@include file="../common/footer.jsp" %>
 </div>
 <!-- METISMENU SCRIPTS -->
 <script src="${path}/js/jquery.metisMenu.js"></script>

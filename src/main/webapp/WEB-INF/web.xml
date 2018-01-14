@@ -25,6 +25,24 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!-- log4j2-begin -->
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>log4jServletFilter</filter-name>
+        <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>log4jServletFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    <!-- log4j2-end -->
+
     <!-- 解决post的乱码 spring为我们提供的乱码过滤器 -->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
@@ -39,6 +57,17 @@
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--spring的ApplicationContext 载入：spring的监听器 -->
+    <listener>
+        <description>spring监听器</description>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 防止spring内存溢出监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
 
     <!--Rest风格的URI,将页面普通的post的请求转为delete或post请求-->
 
@@ -57,4 +86,17 @@
         <url-pattern>/*</url-pattern>
 
     </filter-mapping>
+
+    <!-- 配置session -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <!-- http-only:true-确保cookie不能被客户端脚本访问 -->
+            <http-only>false</http-only>
+            <!-- 防止信息泄露，在https中传输启用 -->
+            <secure>false</secure>
+        </cookie-config>
+        <!-- Servlet3.0规范中的<tracking-mode>允许你定义JSESSIONID是存储在cookie中还是URL参数中 -->
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
 </web-app>

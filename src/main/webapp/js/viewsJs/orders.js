@@ -139,7 +139,16 @@ function tableInit() {
             title: '下单时间',
             field: 'ordertime',
             align: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            formatter: function (value, row, index) {
+                if (value == null) {
+                    return "";
+                }else {
+                    var offlineTimeStr = formatDateTime(value);
+                    return offlineTimeStr;
+                }
+
+            }
         }, {
             title: '接单时间',
             field: 'createtime',

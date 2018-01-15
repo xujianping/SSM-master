@@ -144,7 +144,16 @@ function tableInit() {
             title: '接单时间',
             field: 'createtime',
             align: 'center',
-            valign: 'middle'
+            valign: 'middle',
+            formatter: function (value, row, index) {
+                if (value == null) {
+                    return "";
+                }else {
+                    var offlineTimeStr = formatDateTime(value);
+                    return offlineTimeStr;
+                }
+
+            }
         }, {
             title: '订单价格',
             field: 'payable',

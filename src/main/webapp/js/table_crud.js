@@ -70,7 +70,7 @@ $("#btn_clean").on("click", function () {
 //初始化按钮点击事件
 $("#btn_init").on("click", function () {
     $.ajax({
-        url: '../user/api/initTable/' + 1000,
+        url: '../order/api/initTable/' + 1000,
         method: 'post',
         contentType: "application/x-www-form-urlencoded",
         //阻止深度序列化，向后台传送数组

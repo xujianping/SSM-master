@@ -1,49 +1,40 @@
 package com.xujp.domain;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * Created by Xujp on 2018/1/13.
- */
 public class Order {
-    private long id;
-    private String orderNo;
-    private  String customer;
-    private String phoneNo;
-    private  String address;
-    private Date orderTime;
-    private BigDecimal payable;
-    private Date createTime;
-    private String orderState;
+    private Integer id;
 
-    public Order(){};
-    public Order(long id, String orderNo, String customer, String phoneNo, String address, Date orderTime, BigDecimal payable, Date createTime, String orderState) {
-        this.id = id;
-        this.orderNo = orderNo;
-        this.customer = customer;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.orderTime = orderTime;
-        this.payable = payable;
-        this.createTime = createTime;
-        this.orderState = orderState;
-    }
+    private String orderno;
 
-    public long getId() {
+    private String customer;
+
+    private String phoneno;
+
+    private String address;
+
+    private Date ordertime;
+
+    private Float payable;
+
+    private Date createtime;
+
+    private String orderstate;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getOrderNo() {
-        return orderNo;
+    public String getOrderno() {
+        return orderno;
     }
 
-    public void setOrderNo(String orderNo) {
-        this.orderNo = orderNo;
+    public void setOrderno(String orderno) {
+        this.orderno = orderno == null ? null : orderno.trim();
     }
 
     public String getCustomer() {
@@ -51,15 +42,15 @@ public class Order {
     }
 
     public void setCustomer(String customer) {
-        this.customer = customer;
+        this.customer = customer == null ? null : customer.trim();
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public String getPhoneno() {
+        return phoneno;
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno == null ? null : phoneno.trim();
     }
 
     public String getAddress() {
@@ -67,53 +58,116 @@ public class Order {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address == null ? null : address.trim();
     }
 
-    public Date getOrderTime() {
-        return orderTime;
+    public Date getOrdertime() {
+        return ordertime;
     }
 
-    public void setOrderTime(Date orderTime) {
-        this.orderTime = orderTime;
+    public void setOrdertime(Date ordertime) {
+        this.ordertime = ordertime;
     }
 
-    public BigDecimal getPayable() {
+    public Float getPayable() {
         return payable;
     }
 
-    public void setPayable(BigDecimal payable) {
+    public void setPayable(Float payable) {
         this.payable = payable;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreatetime() {
+        return createtime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 
-    public String getOrderState() {
-        return orderState;
+    public String getOrderstate() {
+        return orderstate;
     }
 
-    public void setOrderState(String orderState) {
-        this.orderState = orderState;
+    public void setOrderstate(String orderstate) {
+        this.orderstate = orderstate == null ? null : orderstate.trim();
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", orderNo='" + orderNo + '\'' +
-                ", customer='" + customer + '\'' +
-                ", phoneNo='" + phoneNo + '\'' +
-                ", address='" + address + '\'' +
-                ", orderTime=" + orderTime +
-                ", payable=" + payable +
-                ", createTime=" + createTime +
-                ", orderState='" + orderState + '\'' +
-                '}';
-    }
+//    @Override
+//    public boolean equals(Object that) {
+//        if (this == that) {
+//            return true;
+//        }
+//        if (that == null) {
+//            return false;
+//        }
+//        if (getClass() != that.getClass()) {
+//            return false;
+//        }
+//        Order other = (Order) that;
+//        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+//                && (this.getOrderno() == null ? other.getOrderno() == null : this.getOrderno().equals(other.getOrderno()))
+//                && (this.getCustomer() == null ? other.getCustomer() == null : this.getCustomer().equals(other.getCustomer()))
+//                && (this.getPhoneno() == null ? other.getPhoneno() == null : this.getPhoneno().equals(other.getPhoneno()))
+//                && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
+//                && (this.getOrdertime() == null ? other.getOrdertime() == null : this.getOrdertime().equals(other.getOrdertime()))
+//                && (this.getPayable() == null ? other.getPayable() == null : this.getPayable().equals(other.getPayable()))
+//                && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
+//                && (this.getOrderstate() == null ? other.getOrderstate() == null : this.getOrderstate().equals(other.getOrderstate()));
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        final int prime = 31;
+//        int result = 1;
+//        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+//        result = prime * result + ((getOrderno() == null) ? 0 : getOrderno().hashCode());
+//        result = prime * result + ((getCustomer() == null) ? 0 : getCustomer().hashCode());
+//        result = prime * result + ((getPhoneno() == null) ? 0 : getPhoneno().hashCode());
+//        result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
+//        result = prime * result + ((getOrdertime() == null) ? 0 : getOrdertime().hashCode());
+//        result = prime * result + ((getPayable() == null) ? 0 : getPayable().hashCode());
+//        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
+//        result = prime * result + ((getOrderstate() == null) ? 0 : getOrderstate().hashCode());
+//        return result;
+//    }
+//
+//    @Override
+//    public boolean equals(Object that) {
+//        if (this == that) {
+//            return true;
+//        }
+//        if (that == null) {
+//            return false;
+//        }
+//        if (getClass() != that.getClass()) {
+//            return false;
+//        }
+//        Order other = (Order) that;
+//        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+//                && (this.getOrderno() == null ? other.getOrderno() == null : this.getOrderno().equals(other.getOrderno()))
+//                && (this.getCustomer() == null ? other.getCustomer() == null : this.getCustomer().equals(other.getCustomer()))
+//                && (this.getPhoneno() == null ? other.getPhoneno() == null : this.getPhoneno().equals(other.getPhoneno()))
+//                && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
+//                && (this.getOrdertime() == null ? other.getOrdertime() == null : this.getOrdertime().equals(other.getOrdertime()))
+//                && (this.getPayable() == null ? other.getPayable() == null : this.getPayable().equals(other.getPayable()))
+//                && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
+//                && (this.getOrderstate() == null ? other.getOrderstate() == null : this.getOrderstate().equals(other.getOrderstate()));
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        final int prime = 31;
+//        int result = 1;
+//        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+//        result = prime * result + ((getOrderno() == null) ? 0 : getOrderno().hashCode());
+//        result = prime * result + ((getCustomer() == null) ? 0 : getCustomer().hashCode());
+//        result = prime * result + ((getPhoneno() == null) ? 0 : getPhoneno().hashCode());
+//        result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
+//        result = prime * result + ((getOrdertime() == null) ? 0 : getOrdertime().hashCode());
+//        result = prime * result + ((getPayable() == null) ? 0 : getPayable().hashCode());
+//        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
+//        result = prime * result + ((getOrderstate() == null) ? 0 : getOrderstate().hashCode());
+//        return result;
+//    }
 }

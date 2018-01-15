@@ -150,7 +150,8 @@
 <script src="${path}/js/custom.js"></script>
 
 <script type="text/javascript" src="${path}/js/commToos.js"></script>
-<%--<script type="text/javascript" src="${path}/js/laydate.js"></script>--%>
+<%--时间选择器插件--%>
+<script type="text/javascript" src="${path}/js/laydate.js"></script>
 <script type="text/javascript" src="${path}/js/viewsJs/orders.js"></script>
 </body>
 </html>
